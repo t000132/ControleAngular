@@ -5,7 +5,7 @@ import { QuizComponent } from "./quiz/quiz.component";
 import { ResultComponent } from "./quiz/result/result.component";
 import { LoginComponent } from "./auth/login/login.component";
 import { RegisterComponent } from "./auth/register/register.component";
-import { CategoriesComponent } from "./categories/categories.component";
+import { CategoryListComponent } from "./category-list/category-list.component";
 
 const routes: Routes = [
   {
@@ -14,7 +14,7 @@ const routes: Routes = [
   },
   {
     path: 'categories',
-    component: CategoriesComponent
+    component: CategoryListComponent
   },
   {
     path: 'quiz/:categoryId',
