@@ -19,7 +19,12 @@
     }
   }
 
+  &_buttons {
+    @apply flex gap-4 my-8;
+  }
+
+  &_categories-btn,
   &_quiz-btn {
-    @apply my-8
+    @apply px-6 py-3;
   }
 }

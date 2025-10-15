@@ -10,5 +10,7 @@
       </svg>
     </button>
   </form>
-  <button class="home_quiz-btn btn--outline" (click)="navigateToQuiz()" [disabled]="isPlayerNameFill">Démarrer</button>
+  <div class="home_buttons" *ngIf="isPlayerNameConfirmed">
+    <a routerLink="/categories" class="home_categories-btn btn">Demarrer</a>
+  </div>
 </section>
