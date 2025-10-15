@@ -38,14 +38,19 @@ export class QuizService {
     this.playerAnswers.push({questionId, answer});
   }
 
-  getQuizContent() {
-    this.http.get('http://localhost:3000/questions').subscribe((questions: any) => {
+  getQuizContent(categoryId?: number) {
+    const url = categoryId
+      ? `http://localhost:3000/questions?categoryId=${categoryId}`
+      : 'http://localhost:3000/questions';
+
+    this.http.get(url).subscribe((questions: any) => {
       for (const question of questions) {
         this.http.get(`http://localhost:3000/answers?questionId=${question.id}`).subscribe((answers: any) => {
           this.quizContent.push({
               id: question.id,
               question: question.questionLabel,
-              answers
+              categoryId: question.categoryId,
+              answers,
           });
         });
       }
