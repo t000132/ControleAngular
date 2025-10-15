@@ -44,4 +44,12 @@ export class CategoryListComponent implements OnInit {
       );
     }
   }
+
+  /**
+   * Reset le filtre et affiche toutes les catégories
+   */
+  resetFilter(): void {
+    this.searchTerm = '';
+    this.filteredCategories = this.categories;
+  }
 }

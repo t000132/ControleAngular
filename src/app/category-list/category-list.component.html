@@ -1,14 +1,25 @@
 <div class="category-list-container">
   <h1>Choisissez une catégorie pour voir le quizz</h1>
   <form>
-    <input
-      type="text"
-      name="search"
-      [(ngModel)]="searchTerm"
-      (ngModelChange)="filterCategories()"
-      placeholder="Rechercher une catégorie"
-      class="search-input"
-    />
+    <div class="search-wrapper">
+      <input
+        type="text"
+        name="search"
+        [(ngModel)]="searchTerm"
+        placeholder="Rechercher une catégorie"
+        class="search-input"
+      />
+      <button 
+        type="button" 
+        title="Effacer"
+        class="btn-clear" 
+        *ngIf="searchTerm" 
+        (click)="resetFilter()"
+        >
+        X
+      </button>
+    </div>
+    <button type="button" class="btn-validate" (click)="filterCategories()">Valider</button>
   </form>
 
   <div class="categories-grid">
