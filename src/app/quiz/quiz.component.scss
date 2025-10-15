@@ -1,3 +1,29 @@
+.category-header {
+  @apply flex justify-between items-center mb-6 p-4 bg-white rounded-lg shadow-sm border;
+
+  .category-info {
+    @apply flex items-center;
+
+    .category-icon {
+      @apply text-3xl mr-3;
+    }
+
+    .category-details {
+      .category-name {
+        @apply text-xl font-bold text-gray-800 m-0;
+      }
+
+      .category-description {
+        @apply text-gray-600 text-sm m-0;
+      }
+    }
+  }
+
+  .back-button {
+    @apply px-4 py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-600 transition-colors cursor-pointer border-none;
+  }
+}
+
 .quiz {
   &_title {
     @apply text-2xl font-bold text-center mb-4;
