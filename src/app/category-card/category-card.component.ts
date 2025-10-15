@@ -19,7 +19,10 @@ export class CategoryCardComponent {
   constructor(private router: Router) { }
 
   onCategoryClick(): void {
-    // pour debug
-    console.log('Catégorie sélectionnée:', this.category);
+    // Récupére le nom du joueur depuis localStorage ou utiliser un nom par défaut
+    const playerName = localStorage.getItem('playerName') || 'Player';
+    
+    // Naviguer vers le quiz avec l'ID de la catégorie en paramètre
+    this.router.navigate(['/quiz', playerName, this.category.id]);
   }
 }

@@ -24,25 +24,36 @@ export class QuizComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      const categoryId = parseInt(params['categoryId']);
-      this.categoryId = categoryId;
+      // Récupere le playerName depuis la route
+      this.playerName = params['playerName'] || localStorage.getItem('playerName') || 'Player';
+      
+      // Saver le playerName dans localStorage
+      if (this.playerName) {
+        localStorage.setItem('playerName', this.playerName);
+      }
 
-      // Load the selected category
-      this.categoryService.getCategoryById(categoryId).subscribe({
-        next: (category) => {
-          this.selectedCategory = category;
-        },
-        error: (error) => {
-          console.error('Error loading category:', error);
-        }
-      });
+      // pour recuperer l'ID de la catégorie depuis la route (optionnel)
+      const categoryIdParam = params['categoryId'];
+      
+      if (categoryIdParam) {
+        const categoryId = parseInt(categoryIdParam);
+        this.categoryId = categoryId;
 
-      // Reset quiz and load questions for this category
-      this.quizService.resetQuiz();
-      this.quizService.getQuizContent(categoryId);
+        this.categoryService.getCategoryById(categoryId).subscribe({
+          next: (category) => {
+            this.selectedCategory = category;
+          },
+          error: (error) => {
+            console.error('Error loading category:', error);
+          }
+        });
 
-      // Retrieve player name from localStorage
-      this.playerName = localStorage.getItem('playerName') || '';
+        this.quizService.resetQuiz();
+        this.quizService.getQuizContent(categoryId);
+      } else {
+        this.quizService.resetQuiz();
+        this.quizService.getQuizContent();
+      }
     });
   }
 

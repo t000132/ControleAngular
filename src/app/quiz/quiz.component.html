@@ -2,10 +2,8 @@
   <!-- Category Header -->
   <div class="category-header" *ngIf="selectedCategory">
     <div class="category-info">
-      <span class="category-icon" [style.color]="selectedCategory.color">{{ selectedCategory.icon }}</span>
       <div class="category-details">
         <h1 class="category-name">{{ selectedCategory.name }}</h1>
-        <p class="category-description">{{ selectedCategory.description }}</p>
       </div>
     </div>
     <button (click)="goBackToCategories()" class="back-button">← Back to Categories</button>

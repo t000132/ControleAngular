@@ -17,6 +17,10 @@ const routes: Routes = [
     component: CategoryListComponent
   },
   {
+    path: 'quiz/:playerName/:categoryId',
+    component : QuizComponent
+  },
+  {
     path: 'quiz/:playerName',
     component : QuizComponent
   },
