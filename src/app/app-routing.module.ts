@@ -5,11 +5,16 @@ import { QuizComponent } from "./quiz/quiz.component";
 import { ResultComponent } from "./quiz/result/result.component";
 import { LoginComponent } from "./auth/login/login.component";
 import { RegisterComponent } from "./auth/register/register.component";
+import { CategoryListComponent } from "./category-list/category-list.component";
 
 const routes: Routes = [
   {
     path: '',
     component : HomeComponent
+  },
+  {
+    path: 'categories',
+    component: CategoryListComponent
   },
   {
     path: 'quiz/:playerName',

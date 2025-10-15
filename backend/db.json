@@ -20,18 +20,18 @@
   "questions": [
     {
       "id": "1",
-      "categoryId": "1",
-      "questionLabel": "What is a component in Angular?"
+      "categoryId": "3",
+      "questionLabel": "C'est quoi HTML?"
     },
     {
       "id": "2",
-      "categoryId": "1",
-      "questionLabel": "Explain the purpose of the NgModule in Angular."
+      "categoryId": "4",
+      "questionLabel": "C'est quoi CSS ?"
     },
     {
       "id": "3",
-      "categoryId": "1",
-      "questionLabel": "How do you create a new Angular application?"
+      "categoryId": "2",
+      "questionLabel": "C'est quoi JS ?"
     },
     {
       "id": "4",
@@ -137,19 +137,19 @@
   "answers": [
     {
       "questionId": 1,
-      "answerLabel": "A reusable building block for the user interface",
+      "answerLabel": "HTML Reponse",
       "isCorrect": true,
       "id": "31b5"
     },
     {
       "questionId": 1,
-      "answerLabel": "A style in Angular",
+      "answerLabel": "CSS reponse",
       "isCorrect": false,
       "id": "5e15"
     },
     {
       "questionId": 1,
-      "answerLabel": "A service for handling HTTP requests",
+      "answerLabel": "JS Reponse",
       "isCorrect": false,
       "id": "66e3"
     },
